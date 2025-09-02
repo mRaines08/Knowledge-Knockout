@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk2kdibsnlarw"]
+
+[ext_resource type="Script" uid="uid://clhe0nrkqhfjr" path="res://death_screen.gd" id="1_if853"]
+
+[node name="Death Screen" type="Node2D"]
+position = Vector2(-3, 3)
+script = ExtResource("1_if853")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -29.0
+offset_top = -14.0
+offset_right = 36.0
+offset_bottom = 17.0
+text = "Restart
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -28.0
+offset_top = -37.0
+offset_right = 41.0
+offset_bottom = -14.0
+text = "You Died"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3, -3)
+zoom = Vector2(5, 5)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
