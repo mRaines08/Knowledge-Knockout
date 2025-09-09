@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://do6jwqcif7y5w"]
+[gd_scene load_steps=2 format=3 uid="uid://cr5ke6vb18fax"]
 
-[ext_resource type="Script" uid="uid://bddepb36socbj" path="res://scripts/killzone.gd" id="1_xlapc"]
+[ext_resource type="Script" uid="uid://da80u0kslpn58" path="res://scenes/enemy_killzone.gd" id="1_m4uh7"]
 
-[node name="Killzone" type="Area2D"]
+[node name="EnemyKillzone" type="Area2D"]
 collision_layer = 3
-script = ExtResource("1_xlapc")
+script = ExtResource("1_m4uh7")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4

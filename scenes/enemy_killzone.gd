@@ -8,8 +8,8 @@ func _ready() -> void:
 	
 	
 	
-	checkpoint_manager = get_parent().get_node("CheckpointManager")
-	player = get_parent().get_node("Player")
+	checkpoint_manager = get_parent().get_node("../CheckpointManager")
+	player = get_parent().get_node("../Player")
 	
 func _on_body_entered(body: Node2D) -> void:
 	#print("You Died!")

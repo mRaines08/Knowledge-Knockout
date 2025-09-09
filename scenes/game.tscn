@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7a21k02guixw"]
+[gd_scene load_steps=20 format=3 uid="uid://c7a21k02guixw"]
 
 [ext_resource type="FontFile" uid="uid://deunyo5tgjgb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dfua2jgxg7qhw" path="res://assets/sprites/world_tileset.png" id="1_lnu2h"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://do6jwqcif7y5w" path="res://scenes/killzone.tscn" id="5_vtaks"]
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="8_dinhu"]
+[ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="10_vtaks"]
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
 script/source = "extends CharacterBody2D
@@ -456,5 +457,8 @@ scale = Vector2(1.17339, 0.885465)
 [node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("8_dinhu")]
 position = Vector2(858, -412)
 scale = Vector2(0.907041, 0.59107)
+
+[node name="Slime" parent="." instance=ExtResource("10_vtaks")]
+position = Vector2(48, -12)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
