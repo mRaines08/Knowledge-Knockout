@@ -459,6 +459,6 @@ position = Vector2(858, -412)
 scale = Vector2(0.907041, 0.59107)
 
 [node name="Slime" parent="." instance=ExtResource("10_vtaks")]
-position = Vector2(48, -12)
+position = Vector2(440, -28)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
