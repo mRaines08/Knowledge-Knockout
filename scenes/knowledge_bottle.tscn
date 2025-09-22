@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cynl22h7a7kgc"]
+
+[ext_resource type="Script" uid="uid://ckytmfnb3jdvw" path="res://scripts/knowledge_bottle.gd" id="1_cg4sn"]
+[ext_resource type="Texture2D" uid="uid://xtbs1mmj7ryj" path="res://assets/sprites/Bottle_Sprite.png" id="2_cg4sn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6shpm"]
+atlas = ExtResource("2_cg4sn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3ohy"]
+atlas = ExtResource("2_cg4sn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2kym"]
+atlas = ExtResource("2_cg4sn")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l37gu"]
+atlas = ExtResource("2_cg4sn")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6shpm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6shpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3ohy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2kym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l37gu")
+}],
+"loop": true,
+"name": &"Bottle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3ohy"]
+size = Vector2(8, 15)
+
+[node name="Knowledge Bottle" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_cg4sn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6shpm")
+animation = &"Bottle"
+autoplay = "Bottle"
+frame_progress = 0.260119
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_i3ohy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

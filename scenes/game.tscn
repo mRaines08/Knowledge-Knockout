@@ -1,14 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7a21k02guixw"]
+[gd_scene load_steps=24 format=3 uid="uid://c7a21k02guixw"]
 
 [ext_resource type="FontFile" uid="uid://deunyo5tgjgb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0tnpc"]
+[ext_resource type="Script" uid="uid://cstqyj5e8oanm" path="res://scripts/game.gd" id="1_dinhu"]
 [ext_resource type="Texture2D" uid="uid://dfua2jgxg7qhw" path="res://assets/sprites/world_tileset.png" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cec60o7y4mw8i" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_kvuet"]
 [ext_resource type="Texture2D" uid="uid://ssriawo0w0n8" path="res://assets/sprites/New Piskel (1).png" id="3_gee14"]
+[ext_resource type="FontFile" uid="uid://cvdcagqd6ge2r" path="res://assets/fonts/PixelOperator8.ttf" id="3_kvuet"]
 [ext_resource type="Texture2D" uid="uid://se8yvvr27o5h" path="res://assets/sprites/New Piskel.png" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://b6vg1ortgm4h5" path="res://scenes/platform.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://do6jwqcif7y5w" path="res://scenes/killzone.tscn" id="5_vtaks"]
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="8_dinhu"]
+[ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="11_trtic"]
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
 script/source = "extends CharacterBody2D
@@ -16,6 +21,9 @@ script/source = "extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 
 
 func _physics_process(delta: float) -> void:
@@ -27,9 +35,25 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	#Gets the Input Direction: -1, 0, 1
 	var direction := Input.get_axis(\"move_left\", \"move_right\")
+	
+	if direction > 0:
+		animated_sprite.flip_h = false	
+	elif direction < 0:
+		animated_sprite.flip_h = true
+		
+	#Play animation
+	if is_on_floor():
+		if direction == 0:
+			animated_sprite.play(\"idle\")
+		else:
+			animated_sprite.play(\"run\")
+	else:
+		animated_sprite.play(\"jump\")
+	
+
+		
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -38,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 "
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc0e3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
 texture = ExtResource("1_lnu2h")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -200,21 +224,21 @@ texture = ExtResource("1_lnu2h")
 3:3/0 = 0
 4:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5wjh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ir15t"]
 texture = ExtResource("3_gee14")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vef74"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca42v"]
 texture = ExtResource("4_0tnpc")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_7jktm"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_fc0e3")
-sources/3 = SubResource("TileSetAtlasSource_j5wjh")
-sources/4 = SubResource("TileSetAtlasSource_vef74")
+sources/1 = SubResource("TileSetAtlasSource_trtic")
+sources/3 = SubResource("TileSetAtlasSource_ir15t")
+sources/4 = SubResource("TileSetAtlasSource_ca42v")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fc0e3"]
 
@@ -306,6 +330,25 @@ _data = {
 }
 
 [node name="Tutorial Level" type="Node2D"]
+script = ExtResource("1_dinhu")
+
+[node name="Score Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_kvuet")
+
+[node name="Bottle Score" type="Label" parent="Score Manager"]
+offset_left = -419.0
+offset_top = 157.0
+offset_right = -228.0
+offset_bottom = 192.0
+scale = Vector2(0.414689, 0.414689)
+theme_override_fonts/font = ExtResource("3_kvuet")
+text = "Bottles Collected: 0"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="End of Level" parent="Score Manager" instance=ExtResource("11_trtic")]
+position = Vector2(0, -368)
 
 [node name="Labels" type="Node" parent="."]
 
@@ -320,6 +363,18 @@ theme_override_fonts/font = ExtResource("1_0tnpc")
 text = "Jump Underneath a Platform
 to get on top of it
 "
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Labels/Label4"]
+z_index = 1
+layout_mode = 0
+offset_left = -2949.71
+offset_top = -195.788
+offset_right = -2387.71
+offset_bottom = -120.788
+scale = Vector2(0.388174, 0.388174)
+theme_override_fonts/font = ExtResource("1_0tnpc")
+text = "This is a Flag. Touch it to end the level!"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Labels"]
@@ -357,22 +412,33 @@ and Stay on to Move
 
 [node name="Label5" type="Label" parent="Labels"]
 z_index = 1
-offset_left = 890.0
-offset_top = -210.0
-offset_right = 1590.0
-offset_bottom = -135.0
-scale = Vector2(0.388174, 0.388174)
+offset_left = 913.0
+offset_top = -241.0
+offset_right = 1613.0
+offset_bottom = -111.0
+scale = Vector2(0.330932, 0.330932)
 theme_override_fonts/font = ExtResource("1_0tnpc")
-text = "This is a Knowledge Bottle. If you fall or answer a
- question wrong you will respawn here.
+text = "This is a Knowledge Bottle. Collect Them All to Regain your Knowledge!
+
+ If you fall or answer a
+ question wrong you will respawn where you collected it.
 "
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_uwrxv")]
 z_index = 3
-position = Vector2(1, 8)
+position = Vector2(1, 10)
 collision_layer = 3
 script = SubResource("GDScript_e2o6t")
+
+[node name="Player Score" type="Label" parent="Player"]
+offset_left = -115.0
+offset_top = -65.0
+offset_right = -75.0
+offset_bottom = -42.0
+scale = Vector2(0.575682, 0.575682)
+theme_override_fonts/font = ExtResource("3_kvuet")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(5, 5)
@@ -456,5 +522,11 @@ scale = Vector2(1.17339, 0.885465)
 [node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("8_dinhu")]
 position = Vector2(858, -412)
 scale = Vector2(0.907041, 0.59107)
+
+[node name="Knowledge Bottle2" parent="." instance=ExtResource("10_vtaks")]
+position = Vector2(856, -382)
+
+[node name="Knowledge Bottle" parent="." instance=ExtResource("10_vtaks")]
+position = Vector2(1025, -189)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
