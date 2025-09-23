@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://560j7wfpybhe"]
+[gd_scene load_steps=2 format=3 uid="uid://vinf05gymg55"]
 
-[ext_resource type="Script" uid="uid://bgx8qbxteug0" path="res://scripts/questions.gd" id="1_rdw2t"]
+[sub_resource type="GDScript" id="GDScript_faf07"]
+script/source = "extends Control
+#@onready var question_canvas: CanvasLayer = $\"..\"
+
+#var checkpoint_manager
+#var player
+
+#func _ready() -> void:
+	#checkpoint_manager = get_parent().get_node(\"CheckpointManager\")
+	#player = get_parent().get_node(\"Player\")
+	
+#func _on__pressed() -> void:
+	#get_tree().pause = false
+	#player.position = checkpoint_manager.last_location
+	#question_canvas.visible = false
+"
 
 [node name="Questions" type="Control"]
 layout_mode = 3
@@ -9,33 +24,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rdw2t")
+script = SubResource("GDScript_faf07")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = -77.0
-offset_top = -75.0
-offset_right = -37.0
-offset_bottom = -35.0
-scale = Vector2(3.92187, 3.92187)
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Resume"
+text = "What is 2+2?"
 
-[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
-
-[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="4" type="Button" parent="PanelContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
-theme_override_font_sizes/font_size = 0
-text = "Restart"
+text = "4"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/4" to="." method="_on__pressed"]

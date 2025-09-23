@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://ds00im5iblkbm" path="res://scripts/pause_canvas.gd" id="1_0xj6u"]
 
 [node name="Pause Canvas" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_0xj6u")

@@ -443,7 +443,6 @@ scale = Vector2(0.575682, 0.575682)
 theme_override_fonts/font = ExtResource("3_kvuet")
 
 [node name="Pause Canvas" parent="Player" instance=ExtResource("7_ca42v")]
-process_mode = 3
 
 [node name="Pause" parent="Player/Pause Canvas" instance=ExtResource("7_ir15t")]
 offset_left = 1.0
