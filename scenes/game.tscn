@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c7a21k02guixw"]
+[gd_scene load_steps=26 format=3 uid="uid://c7a21k02guixw"]
 
 [ext_resource type="FontFile" uid="uid://deunyo5tgjgb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0tnpc"]
 [ext_resource type="Script" uid="uid://cstqyj5e8oanm" path="res://scripts/game.gd" id="1_dinhu"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://se8yvvr27o5h" path="res://assets/sprites/New Piskel.png" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://b6vg1ortgm4h5" path="res://scenes/platform.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://do6jwqcif7y5w" path="res://scenes/killzone.tscn" id="5_vtaks"]
+[ext_resource type="PackedScene" uid="uid://2hd4krrsu1o5" path="res://scenes/pause_canvas.tscn" id="7_ca42v"]
+[ext_resource type="PackedScene" uid="uid://28htanwxrsma" path="res://scenes/Pause.tscn" id="7_ir15t"]
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="8_dinhu"]
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="10_vtaks"]
@@ -439,6 +441,16 @@ offset_right = -75.0
 offset_bottom = -42.0
 scale = Vector2(0.575682, 0.575682)
 theme_override_fonts/font = ExtResource("3_kvuet")
+
+[node name="Pause Canvas" parent="Player" instance=ExtResource("7_ca42v")]
+process_mode = 3
+
+[node name="Pause" parent="Player/Pause Canvas" instance=ExtResource("7_ir15t")]
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 1.0
+offset_bottom = 10.0
+scale = Vector2(1.0019, 1.0019)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(5, 5)
