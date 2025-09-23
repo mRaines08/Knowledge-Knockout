@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bpyydrg5sossw"]
 
-[ext_resource type="Script" uid="uid://ba05a0amm7rt3" path="res://scenes/slime.gd" id="1_n6pvg"]
+[ext_resource type="Script" uid="uid://ba05a0amm7rt3" path="res://scripts/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://4n0jbfb2a21n" path="res://assets/sprites/slime_green.png" id="1_p2gj0"]
 [ext_resource type="PackedScene" uid="uid://cr5ke6vb18fax" path="res://scenes/enemy_killzone.tscn" id="3_n6pvg"]
 
@@ -68,6 +68,8 @@ target_position = Vector2(-4, 6)
 
 [node name="EnemyKillzone" parent="." instance=ExtResource("3_n6pvg")]
 position = Vector2(0, 6)
+collision_layer = 1
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyKillzone"]
 shape = SubResource("RectangleShape2D_pjw23")
