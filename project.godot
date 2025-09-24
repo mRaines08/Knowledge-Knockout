@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Knowledge Knockout"
-run/main_scene="uid://c7a21k02guixw"
+run/main_scene="uid://dq7rq2jkqh43k"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
