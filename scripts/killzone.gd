@@ -6,6 +6,9 @@ var player
 @onready var question_canvas: CanvasLayer = $"../Player/QuestionCanvas"
 
 func _ready() -> void:
+	
+	
+	
 	checkpoint_manager = get_parent().get_node("CheckpointManager")
 	player = get_parent().get_node("Player")
 	
