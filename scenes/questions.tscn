@@ -1,35 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://1apri87my41g"]
+[gd_scene load_steps=2 format=3 uid="uid://vinf05gymg55"]
 
-[ext_resource type="Script" uid="uid://b7xg2mom4bowg" path="res://scripts/questions.gd" id="1_rdw2t"]
+[sub_resource type="GDScript" id="GDScript_faf07"]
+script/source = "extends Control
+#@onready var question_canvas: CanvasLayer = $\"..\"
+
+#var checkpoint_manager
+#var player
+
+#func _ready() -> void:
+	#checkpoint_manager = get_parent().get_node(\"CheckpointManager\")
+	#player = get_parent().get_node(\"Player\")
+	
+#func _on__pressed() -> void:
+	#get_tree().pause = false
+	#player.position = checkpoint_manager.last_location
+	#question_canvas.visible = false
+"
 
 [node name="Questions" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -861.0
-offset_bottom = -485.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3.96, 3.96)
-script = ExtResource("1_rdw2t")
+script = SubResource("GDScript_faf07")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-alignment = 1
 
-[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Resume"
+text = "What is 2+2?"
 
-[node name="Dye" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="4" type="Button" parent="PanelContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
-text = "Die"
+text = "4"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Dye" to="." method="_on_dye_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/4" to="." method="_on__pressed"]

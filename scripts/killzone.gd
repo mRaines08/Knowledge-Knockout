@@ -3,6 +3,7 @@ extends Area2D
 #@onready var timer: Timer = $Timer
 var checkpoint_manager
 var player
+@onready var question_canvas: CanvasLayer = $"../Player/QuestionCanvas"
 
 func _ready() -> void:
 	
@@ -14,11 +15,12 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	#print("You Died!")
 	#timer.start()
-	#get_tree().change_scene_to_file("res://death_screen.tscn")
+	get_tree().change_scene_to_file("res://death_screen.tscn")
 	if body.is_in_group("Player"):
 		killPlayer()
+	#question_canvas.visible = true
 	
 func killPlayer():
 	player.position = checkpoint_manager.last_location
-#func _on_timer_timeout() -> void:
-	#get_tree().reload_current_scene()
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()
