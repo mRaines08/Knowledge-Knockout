@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://57gj77senilp"]
+
+[ext_resource type="Script" uid="uid://2r5c7kyi2dgo" path="res://assets/Math/question.gd" id="1_puyoo"]
+
+[sub_resource type="GDScript" id="GDScript_e6shp"]
+script/source = "extends Node
+"
+
+[node name="Math Question" type="Node"]
+script = SubResource("GDScript_e6shp")
+
+[node name="Question" type="Node2D" parent="."]
+script = ExtResource("1_puyoo")
+
+[node name="lblProblem" type="Label" parent="Question"]
+offset_left = 382.0
+offset_top = 184.0
+offset_right = 604.0
+offset_bottom = 207.0
+
+[node name="lneAnswer" type="LineEdit" parent="Question"]
+offset_left = 381.0
+offset_top = 213.0
+offset_right = 605.0
+offset_bottom = 244.0
+
+[connection signal="text_submitted" from="Question/lneAnswer" to="Question" method="_on_lne_answer_text_submitted"]
