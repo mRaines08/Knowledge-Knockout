@@ -238,8 +238,8 @@ texture = ExtResource("4_0tnpc")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_7jktm"]
-physics_layer_0/collision_layer = 3
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/1 = SubResource("TileSetAtlasSource_trtic")
 sources/3 = SubResource("TileSetAtlasSource_ir15t")
 sources/4 = SubResource("TileSetAtlasSource_ca42v")
@@ -542,7 +542,9 @@ position = Vector2(856, -382)
 [node name="Knowledge Bottle" parent="." instance=ExtResource("10_vtaks")]
 position = Vector2(1025, -189)
 
-[node name="Slime" parent="." instance=ExtResource("17_rysoc")]
-position = Vector2(104, -28)
+[node name="Slimes" type="Node" parent="."]
+
+[node name="Slime1" parent="Slimes" instance=ExtResource("17_rysoc")]
+position = Vector2(441, -28)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
