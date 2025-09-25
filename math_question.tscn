@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://baa6ckddn8c2f"]
+
+[ext_resource type="Script" uid="uid://stk5ocybgqq2" path="res://math_question.gd" id="1_mpqef"]
+
+[node name="math_question" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_mpqef")
+
+[node name="lblProblem" type="Label" parent="."]
+offset_left = 108.0
+offset_top = 81.0
+offset_right = 298.0
+offset_bottom = 104.0
+
+[node name="lnedAnswer" type="LineEdit" parent="."]
+process_mode = 3
+offset_left = 110.0
+offset_top = 111.0
+offset_right = 299.0
+offset_bottom = 142.0
+
+[connection signal="text_submitted" from="lnedAnswer" to="." method="_on_lned_answer_text_submitted"]
