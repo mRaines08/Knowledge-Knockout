@@ -4,8 +4,8 @@ extends Node2D
 @onready var bottle_score: Label = $"Score Manager/Bottle Score"
 
 func _ready() -> void:
-	player_score.text = bottle_score.text
-
+	#player_score.text = bottle_score.text
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

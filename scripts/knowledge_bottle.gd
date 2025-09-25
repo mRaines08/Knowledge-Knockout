@@ -7,5 +7,5 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	queue_free()
 	score_manager.add_point()
-	player_score.text = bottle_score.text
+	#player_score.text = bottle_score.text
 	

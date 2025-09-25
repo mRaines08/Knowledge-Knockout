@@ -339,10 +339,10 @@ unique_name_in_owner = true
 script = ExtResource("2_kvuet")
 
 [node name="Bottle Score" type="Label" parent="Score Manager"]
-offset_left = -419.0
-offset_top = 157.0
-offset_right = -228.0
-offset_bottom = 192.0
+offset_left = -576.0
+offset_top = 87.0
+offset_right = -385.0
+offset_bottom = 122.0
 scale = Vector2(0.414689, 0.414689)
 theme_override_fonts/font = ExtResource("3_kvuet")
 text = "Bottles Collected: 0"
@@ -430,25 +430,17 @@ autowrap_mode = 2
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_uwrxv")]
 z_index = 3
-position = Vector2(1, 10)
+position = Vector2(0, 8)
 collision_layer = 3
 script = SubResource("GDScript_e2o6t")
-
-[node name="Player Score" type="Label" parent="Player"]
-offset_left = -115.0
-offset_top = -65.0
-offset_right = -75.0
-offset_bottom = -42.0
-scale = Vector2(0.575682, 0.575682)
-theme_override_fonts/font = ExtResource("3_kvuet")
 
 [node name="Pause Canvas" parent="Player" instance=ExtResource("7_ca42v")]
 
 [node name="Pause" parent="Player/Pause Canvas" instance=ExtResource("7_ir15t")]
-offset_left = 1.0
-offset_top = 10.0
-offset_right = 1.0
-offset_bottom = 10.0
+offset_left = 302.0
+offset_top = 102.0
+offset_right = 302.0
+offset_bottom = 102.0
 scale = Vector2(1.0019, 1.0019)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

@@ -389,14 +389,6 @@ position = Vector2(-1, -43)
 collision_layer = 3
 script = SubResource("GDScript_e2o6t")
 
-[node name="Player Score" type="Label" parent="Player"]
-offset_left = -114.0
-offset_top = -64.0
-offset_right = -74.0
-offset_bottom = -41.0
-scale = Vector2(0.575682, 0.575682)
-theme_override_fonts/font = ExtResource("3_ve5ok")
-
 [node name="Pause Canvas" parent="Player" instance=ExtResource("5_g8vcy")]
 
 [node name="Pause" parent="Player/Pause Canvas" instance=ExtResource("6_cqal4")]
