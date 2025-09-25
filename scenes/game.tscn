@@ -1,10 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://c7a21k02guixw"]
+[gd_scene load_steps=27 format=3 uid="uid://c7a21k02guixw"]
 
 [ext_resource type="FontFile" uid="uid://deunyo5tgjgb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0tnpc"]
-[ext_resource type="Script" uid="uid://cstqyj5e8oanm" path="res://scripts/game.gd" id="1_dinhu"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_dinhu"]
 [ext_resource type="Texture2D" uid="uid://dfua2jgxg7qhw" path="res://assets/sprites/world_tileset.png" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cec60o7y4mw8i" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_kvuet"]
+[ext_resource type="Script" path="res://scripts/score_manager.gd" id="2_kvuet"]
 [ext_resource type="Texture2D" uid="uid://ssriawo0w0n8" path="res://assets/sprites/New Piskel (1).png" id="3_gee14"]
 [ext_resource type="FontFile" uid="uid://cvdcagqd6ge2r" path="res://assets/fonts/PixelOperator8.ttf" id="3_kvuet"]
 [ext_resource type="Texture2D" uid="uid://se8yvvr27o5h" path="res://assets/sprites/New Piskel.png" id="4_0tnpc"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="8_dinhu"]
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="11_trtic"]
+[ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="17_rysoc"]
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
 script/source = "extends CharacterBody2D
@@ -237,7 +238,8 @@ texture = ExtResource("4_0tnpc")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_7jktm"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/1 = SubResource("TileSetAtlasSource_trtic")
 sources/3 = SubResource("TileSetAtlasSource_ir15t")
 sources/4 = SubResource("TileSetAtlasSource_ca42v")
@@ -539,5 +541,8 @@ position = Vector2(856, -382)
 
 [node name="Knowledge Bottle" parent="." instance=ExtResource("10_vtaks")]
 position = Vector2(1025, -189)
+
+[node name="Slime" parent="." instance=ExtResource("17_rysoc")]
+position = Vector2(104, -28)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]

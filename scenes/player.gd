@@ -8,10 +8,10 @@ const JUMP_VELOCITY = -400.0
 
 
 
-func _on_body_entered(body: Node2D) -> void:
+#func _on_body_entered(body: Node2D) -> void:
 	
-	if body.is_in_group("Slime"):
-		questions.visible = true
+	#if body.is_in_group("Slime"):
+		#questions.visible = true
 
 
 

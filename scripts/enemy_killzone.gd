@@ -4,7 +4,9 @@ extends Area2D
 var checkpoint_manager
 var player
 var pullQ = false
-@onready var questions: Control = $CanvasLayer/Questions
+
+@onready var slime_menu: Control = $CanvasLayer/SlimeMenu
+
 
 #@onready var questions: Control = $"."
 @onready var slime: Node2D = $".."
@@ -27,7 +29,7 @@ func _on_body_entered(body: Node2D) -> void:
 	#get_tree().change_scene_to_file("res://death_screen.tscn")
 	if slime.visible:
 		if body.is_in_group("Player"):
-			questions.visible = true
+			slime_menu.visible = true
 			Engine.time_scale = 0
 	
 #func get_q():
