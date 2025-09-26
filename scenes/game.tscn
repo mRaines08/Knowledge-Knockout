@@ -430,6 +430,18 @@ text = "This is a Knowledge Bottle. Collect Them All to Regain your Knowledge!
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="Label6" type="Label" parent="Labels"]
+offset_left = 178.0
+offset_top = -99.0
+offset_right = 630.0
+offset_bottom = -26.0
+theme_override_fonts/font = ExtResource("1_0tnpc")
+theme_override_font_sizes/font_size = 8
+text = "This is an enemy, a Slime.
+if you touch it, a question
+will show up. If answered correctly, the enemly will be defeated
+but if you're incorrect, you will be sent to your last checkpoint"
+
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_uwrxv")]
 z_index = 3
 position = Vector2(1, 10)

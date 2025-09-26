@@ -11,12 +11,12 @@ var pullQ = false
 #@onready var questions: Control = $"."
 @onready var slime: Node2D = $".."
 
-func _ready() -> void:
+#func _ready() -> void:
 	
 	
 	
-	checkpoint_manager = get_parent().get_node("../CheckpointManager")
-	player = get_parent().get_node("../Player")
+	#checkpoint_manager = get_parent().get_node("../CheckpointManager")
+	#player = get_parent().get_node("../Player")
 	#slime = get_parent().get_node("../Slime")
 
 #const Question_pt = preload("res://scenes/question_pt.tscn")

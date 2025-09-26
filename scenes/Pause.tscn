@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://28htanwxrsma"]
 
-[ext_resource type="Script" uid="uid://73k2ea85b2rf" path="res://scripts/Pause.gd" id="1_0ep5p"]
+[ext_resource type="Script" path="res://scripts/Pause.gd" id="1_0ep5p"]
 [ext_resource type="FontFile" uid="uid://cvdcagqd6ge2r" path="res://assets/fonts/PixelOperator8.ttf" id="2_wcpj6"]
 
 [node name="Pause" type="Control"]
