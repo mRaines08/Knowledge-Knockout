@@ -392,10 +392,10 @@ script = SubResource("GDScript_e2o6t")
 [node name="Pause Canvas" parent="Player" instance=ExtResource("5_g8vcy")]
 
 [node name="Pause" parent="Player/Pause Canvas" instance=ExtResource("6_cqal4")]
-offset_left = -4.0
-offset_top = -44.0
-offset_right = -4.0
-offset_bottom = -44.0
+offset_left = 276.0
+offset_top = 94.0
+offset_right = 276.0
+offset_bottom = 94.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)

@@ -440,10 +440,10 @@ script = SubResource("GDScript_s7g0b")
 [node name="Pause Canvas" parent="Player" instance=ExtResource("6_1s4pk")]
 
 [node name="Pause" parent="Player/Pause Canvas" instance=ExtResource("7_x2xxo")]
-offset_left = -1.0
-offset_top = 8.0
-offset_right = -1.0
-offset_bottom = 8.0
+offset_left = 298.0
+offset_top = 94.0
+offset_right = 298.0
+offset_bottom = 94.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(5, 5)
