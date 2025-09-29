@@ -5,7 +5,9 @@ extends Node2D
 
 func _ready() -> void:
 	#player_score.text = bottle_score.text
-	pass
+	GlobalScript.level = 1
+	GlobalScript.reset_level_time()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

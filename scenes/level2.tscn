@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://di2psum7i0kp1"]
 
-[ext_resource type="Script" uid="uid://cstqyj5e8oanm" path="res://scripts/game.gd" id="1_8g4ke"]
+[ext_resource type="Script" uid="uid://c8k2hcr2f3flp" path="res://scripts/level_2.gd" id="1_wvb8j"]
 [ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_56gwk"]
 [ext_resource type="FontFile" uid="uid://cvdcagqd6ge2r" path="res://assets/fonts/PixelOperator8.ttf" id="3_ve5ok"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="4_cleqw"]
@@ -366,7 +366,7 @@ _data = {
 }
 
 [node name="Tutorial Level" type="Node2D"]
-script = ExtResource("1_8g4ke")
+script = ExtResource("1_wvb8j")
 
 [node name="Score Manager" type="Node" parent="."]
 unique_name_in_owner = true
