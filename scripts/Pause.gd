@@ -28,11 +28,14 @@ func _on_resume_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	resume()
+	GlobalScript.count = 0
 	get_tree().change_scene_to_file("res://scenes/level_screen.tscn")
+	
 
 
 func _on_restart_pressed() -> void:
 	resume()
+	GlobalScript.count = 0
 	get_tree().reload_current_scene()
 
 	

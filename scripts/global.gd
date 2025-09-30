@@ -1,3 +1,4 @@
 extends Node
 
-var Score = 0
+#@onready var test: Label = $Test
+#var Score = 0
