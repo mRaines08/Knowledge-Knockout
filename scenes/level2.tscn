@@ -1,7 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://brl02aujou67k"]
+[gd_scene load_steps=33 format=3 uid="uid://di2psum7i0kp1"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_8g4ke"]
-[ext_resource type="Script" path="res://scripts/score_manager.gd" id="2_56gwk"]
+[ext_resource type="Script" uid="uid://c8k2hcr2f3flp" path="res://scripts/level_2.gd" id="1_wvb8j"]
+[ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_56gwk"]
 [ext_resource type="FontFile" uid="uid://cvdcagqd6ge2r" path="res://assets/fonts/PixelOperator8.ttf" id="3_ve5ok"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="4_cleqw"]
 [ext_resource type="PackedScene" uid="uid://2hd4krrsu1o5" path="res://scenes/pause_canvas.tscn" id="5_g8vcy"]
@@ -366,7 +366,7 @@ _data = {
 }
 
 [node name="Tutorial Level" type="Node2D"]
-script = ExtResource("1_8g4ke")
+script = ExtResource("1_wvb8j")
 
 [node name="Score Manager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -389,21 +389,13 @@ position = Vector2(-1, -43)
 collision_layer = 3
 script = SubResource("GDScript_e2o6t")
 
-[node name="Player Score" type="Label" parent="Player"]
-offset_left = -114.0
-offset_top = -64.0
-offset_right = -74.0
-offset_bottom = -41.0
-scale = Vector2(0.575682, 0.575682)
-theme_override_fonts/font = ExtResource("3_ve5ok")
-
 [node name="Pause Canvas" parent="Player" instance=ExtResource("5_g8vcy")]
 
 [node name="Pause" parent="Player/Pause Canvas" instance=ExtResource("6_cqal4")]
-offset_left = -4.0
-offset_top = -44.0
-offset_right = -4.0
-offset_bottom = -44.0
+offset_left = 276.0
+offset_top = 94.0
+offset_right = 276.0
+offset_bottom = 94.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)

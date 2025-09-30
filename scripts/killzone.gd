@@ -18,7 +18,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	#print("You Died!")
 	#timer.start()
-	get_tree().change_scene_to_file("res://death_screen.tscn")
+	#get_tree().change_scene_to_file("res://death_screen.tscn")
 	if body.is_in_group("Player"):
 		killPlayer()
 	

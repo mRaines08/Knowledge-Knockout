@@ -6,5 +6,5 @@ var score = 0
 
 func add_point():
 	score+=1
-	bottle_score.text = "Bottles Collected:" + str(score)
+	#bottle_score.text = "Bottles Collected:" + str(score)
 	
