@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cr5ke6vb18fax"]
 
 [ext_resource type="Script" uid="uid://da80u0kslpn58" path="res://scripts/enemy_killzone.gd" id="1_m4uh7"]
-[ext_resource type="PackedScene" uid="uid://1apri87my41g" path="res://scenes/questions.tscn" id="2_8ei62"]
+[ext_resource type="PackedScene" uid="uid://dp7r3u07w0mm1" path="res://scenes/slime_menu.tscn" id="2_8ei62"]
 
 [node name="EnemyKillzone" type="Area2D"]
 collision_layer = 3
@@ -13,13 +13,12 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Questions" parent="CanvasLayer" instance=ExtResource("2_8ei62")]
+[node name="SlimeMenu" parent="CanvasLayer" instance=ExtResource("2_8ei62")]
 visible = false
-offset_left = 431.0
-offset_top = 180.0
-offset_right = -649.0
-offset_bottom = -401.0
-metadata/_edit_use_anchors_ = true
+offset_left = 389.5
+offset_top = 165.5
+offset_right = 389.5
+offset_bottom = 165.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

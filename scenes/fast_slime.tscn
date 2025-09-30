@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://kng2l7jukgh0"]
+
+[ext_resource type="Script" uid="uid://dxj754yud0exk" path="res://fast_slime.gd" id="1_ssnsa"]
+[ext_resource type="Texture2D" uid="uid://b0ly2gu01n7sg" path="res://assets/sprites/slime_purple.png" id="2_2myfg"]
+[ext_resource type="PackedScene" uid="uid://cr5ke6vb18fax" path="res://scenes/enemy_killzone.tscn" id="3_21q4e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cktea"]
+atlas = ExtResource("2_2myfg")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bpw2"]
+atlas = ExtResource("2_2myfg")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75ora"]
+atlas = ExtResource("2_2myfg")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plnwr"]
+atlas = ExtResource("2_2myfg")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrsn1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cktea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bpw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75ora")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plnwr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
+size = Vector2(12, 12)
+
+[node name="FastSlime" type="Node2D"]
+script = ExtResource("1_ssnsa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wrsn1")
+autoplay = "default"
+frame_progress = 0.533257
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(1, 6)
+target_position = Vector2(9, 0)
+collision_mask = 4
+
+[node name="RayCastRightDown" type="RayCast2D" parent="."]
+position = Vector2(4, 8)
+target_position = Vector2(4, 6)
+collision_mask = 4
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-1, 6)
+target_position = Vector2(-9, 0)
+collision_mask = 4
+
+[node name="RayCastLeftDown" type="RayCast2D" parent="."]
+position = Vector2(-4, 8)
+target_position = Vector2(-4, 6)
+collision_mask = 4
+
+[node name="EnemyKillzone" parent="." instance=ExtResource("3_21q4e")]
+position = Vector2(0, 6)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyKillzone"]
+shape = SubResource("RectangleShape2D_pjw23")

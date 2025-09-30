@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dgfvc4e55urjl"]
+[gd_scene load_steps=39 format=3 uid="uid://dgfvc4e55urjl"]
 
 [ext_resource type="Script" uid="uid://cwrmwsjrblocb" path="res://scripts/level_1.gd" id="1_1s4pk"]
 [ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_2aecg"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="12_wbtxt"]
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="13_x2fux"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="15_6dial"]
+[ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="18_x2xxo"]
+[ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="19_2cbcq"]
 
 [sub_resource type="GDScript" id="GDScript_s7g0b"]
 script/source = "extends CharacterBody2D
@@ -242,7 +244,8 @@ texture = ExtResource("8_isj1j")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_iw4em"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/1 = SubResource("TileSetAtlasSource_mmfjm")
 sources/3 = SubResource("TileSetAtlasSource_k8ld0")
 sources/4 = SubResource("TileSetAtlasSource_mbb35")
@@ -576,5 +579,28 @@ position = Vector2(1607, -907)
 
 [node name="End of Level" parent="." instance=ExtResource("15_6dial")]
 position = Vector2(2565, -819)
+
+[node name="Slimes" type="Node" parent="."]
+
+[node name="Slime" parent="Slimes" instance=ExtResource("18_x2xxo")]
+position = Vector2(825, -108)
+
+[node name="Slime2" parent="Slimes" instance=ExtResource("18_x2xxo")]
+position = Vector2(1018, -332)
+
+[node name="Slime3" parent="Slimes" instance=ExtResource("18_x2xxo")]
+position = Vector2(697, -300)
+
+[node name="Slime4" parent="Slimes" instance=ExtResource("18_x2xxo")]
+position = Vector2(1770, -571)
+
+[node name="Slime5" parent="Slimes" instance=ExtResource("18_x2xxo")]
+position = Vector2(1527, -924)
+
+[node name="FastSlime" parent="Slimes" instance=ExtResource("19_2cbcq")]
+position = Vector2(257, -28)
+
+[node name="FastSlime2" parent="Slimes" instance=ExtResource("19_2cbcq")]
+position = Vector2(512, -284)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
