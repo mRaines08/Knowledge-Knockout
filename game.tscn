@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7a21k02guixw"]
+[gd_scene load_steps=12 format=3 uid="uid://c4ttqnf7iuopl"]
 
 [ext_resource type="PackedScene" uid="uid://cec60o7y4mw8i" path="res://scenes/player.tscn" id="1_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://dfua2jgxg7qhw" path="res://assets/sprites/world_tileset.png" id="2_feb5d"]
