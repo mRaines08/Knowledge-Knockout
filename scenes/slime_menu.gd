@@ -3,12 +3,14 @@ extends Control
 var checkpoint_manager
 var player
 var slime
+#var fstSlime
 
 func _ready() -> void:
 	
 	checkpoint_manager = get_node("../../../../../CheckpointManager")
 	player = get_node("../../../../../Player")
 	slime = get_node("../../..")
+	#fstSlime = get_node("../../../../FastSlime")
 
 func _on_resume_pressed() -> void:
 	slime.visible = false

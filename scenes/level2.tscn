@@ -1,7 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://brl02aujou67k"]
+[gd_scene load_steps=35 format=3 uid="uid://brl02aujou67k"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_8g4ke"]
-[ext_resource type="Script" path="res://scripts/score_manager.gd" id="2_56gwk"]
+[ext_resource type="Script" uid="uid://cstqyj5e8oanm" path="res://scripts/game.gd" id="1_8g4ke"]
+[ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_56gwk"]
 [ext_resource type="FontFile" uid="uid://cvdcagqd6ge2r" path="res://assets/fonts/PixelOperator8.ttf" id="3_ve5ok"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="4_cleqw"]
 [ext_resource type="PackedScene" uid="uid://2hd4krrsu1o5" path="res://scenes/pause_canvas.tscn" id="5_g8vcy"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="11_63e4f"]
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="12_y6lc1"]
 [ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="17_g8vcy"]
+[ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="18_cqal4"]
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
 script/source = "extends CharacterBody2D
@@ -500,13 +501,16 @@ position = Vector2(1649, -476)
 [node name="Slime4" parent="Slimes" instance=ExtResource("17_g8vcy")]
 position = Vector2(129, -60)
 
-[node name="Slime5" parent="Slimes" instance=ExtResource("17_g8vcy")]
-position = Vector2(1369, -860)
-
 [node name="Slime6" parent="Slimes" instance=ExtResource("17_g8vcy")]
 position = Vector2(1432, -972)
 
 [node name="Slime7" parent="Slimes" instance=ExtResource("17_g8vcy")]
 position = Vector2(1757, -1452)
+
+[node name="FastSlime" parent="Slimes" instance=ExtResource("18_cqal4")]
+position = Vector2(587, -204)
+
+[node name="FastSlime" parent="." instance=ExtResource("18_cqal4")]
+position = Vector2(1275, -860)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]

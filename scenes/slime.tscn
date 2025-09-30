@@ -37,7 +37,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
@@ -49,6 +49,8 @@ script = ExtResource("1_n6pvg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v5wyi")
 autoplay = "default"
+frame = 2
+frame_progress = 0.978217
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(1, 6)

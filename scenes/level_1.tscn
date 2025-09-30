@@ -1,7 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://dgfvc4e55urjl"]
+[gd_scene load_steps=39 format=3 uid="uid://dgfvc4e55urjl"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_7gny6"]
-[ext_resource type="Script" path="res://scripts/score_manager.gd" id="2_2aecg"]
+[ext_resource type="Script" uid="uid://cstqyj5e8oanm" path="res://scripts/game.gd" id="1_7gny6"]
+[ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_2aecg"]
 [ext_resource type="FontFile" uid="uid://deunyo5tgjgb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_6dial"]
 [ext_resource type="FontFile" uid="uid://cvdcagqd6ge2r" path="res://assets/fonts/PixelOperator8.ttf" id="3_6dial"]
 [ext_resource type="PackedScene" uid="uid://cec60o7y4mw8i" path="res://scenes/player.tscn" id="5_1s4pk"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="13_x2fux"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="15_6dial"]
 [ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="18_x2xxo"]
+[ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="19_2cbcq"]
 
 [sub_resource type="GDScript" id="GDScript_s7g0b"]
 script/source = "extends CharacterBody2D
@@ -603,5 +604,11 @@ position = Vector2(1770, -571)
 
 [node name="Slime5" parent="Slimes" instance=ExtResource("18_x2xxo")]
 position = Vector2(1527, -924)
+
+[node name="FastSlime" parent="Slimes" instance=ExtResource("19_2cbcq")]
+position = Vector2(257, -28)
+
+[node name="FastSlime2" parent="Slimes" instance=ExtResource("19_2cbcq")]
+position = Vector2(512, -284)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
