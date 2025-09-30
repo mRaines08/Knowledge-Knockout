@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var math_question: CanvasLayer = $"../Player/math_question"
+@onready var reading_question: Window = $"../Player/reading_question"
 
 #@onready var timer: Timer = $Timer
 var checkpoint_manager
@@ -23,7 +24,10 @@ func _on_body_entered(body: Node2D) -> void:
 	
 func killPlayer():
 	player.position = checkpoint_manager.last_location
-	math_question.new_math_question()
+	if !Global.is_math_question:
+		math_question.new_math_question()
+	else:
+		reading_question.visible = true
 	
 func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()

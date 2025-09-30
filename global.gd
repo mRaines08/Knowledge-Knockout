@@ -21,6 +21,9 @@ var noun_list = []
 var adjective_list = []
 var verb_list = []
 var sentance_list = []
+
+#create varible for question type
+var is_math_question = true
 	
 func populate() -> void:
 	#populates the array with words from the file
