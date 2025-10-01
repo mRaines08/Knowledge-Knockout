@@ -1,17 +1,14 @@
 extends Area2D
 
-@onready var math_question: CanvasLayer = $"../Player/math_question"
-@onready var reading_question: Window = $"../Player/reading_question"
-
+@export var math_question_node: NodePath
+@onready var math_question = get_node(math_question_node)
+@export var reading_question_node: NodePath
+@onready var reading_question = get_node(reading_question_node)
 #@onready var timer: Timer = $Timer
 var checkpoint_manager
 var player
-@onready var question_canvas: CanvasLayer = $"../Player/QuestionCanvas"
 
 func _ready() -> void:
-	
-	
-	
 	checkpoint_manager = get_parent().get_node("CheckpointManager")
 	player = get_parent().get_node("Player")
 	
@@ -24,7 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 func killPlayer():
 	player.position = checkpoint_manager.last_location
-	if !Global.is_math_question:
+	if Global.is_math_question:
 		math_question.new_math_question()
 	else:
 		reading_question.visible = true
