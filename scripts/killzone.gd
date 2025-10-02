@@ -17,6 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 	#timer.start()
 	#get_tree().change_scene_to_file("res://death_screen.tscn")
 	if body.is_in_group("Player"):
+		$Death.play()
 		killPlayer()
 	#question_canvas.visible = true
 	

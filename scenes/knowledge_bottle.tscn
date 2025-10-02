@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cynl22h7a7kgc"]
+[gd_scene load_steps=13 format=3 uid="uid://cynl22h7a7kgc"]
 
 [ext_resource type="Script" uid="uid://ckytmfnb3jdvw" path="res://scripts/knowledge_bottle.gd" id="1_cg4sn"]
 [ext_resource type="Texture2D" uid="uid://xtbs1mmj7ryj" path="res://assets/sprites/Bottle_Sprite.png" id="2_cg4sn"]
+[ext_resource type="AudioStream" uid="uid://x5rwpkanfg4t" path="res://assets/sounds/bottle.wav" id="3_6shpm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6shpm"]
 atlas = ExtResource("2_cg4sn")
@@ -42,9 +43,110 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3ohy"]
 size = Vector2(8, 15)
 
+[sub_resource type="Animation" id="Animation_i3ohy"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pickup:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6shpm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pickup:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2kym"]
+_data = {
+&"PickUp": SubResource("Animation_i3ohy"),
+&"RESET": SubResource("Animation_6shpm")
+}
+
 [node name="Knowledge Bottle" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_cg4sn")
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6shpm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6shpm")
@@ -55,5 +157,10 @@ frame_progress = 0.260119
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_i3ohy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_a2kym")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

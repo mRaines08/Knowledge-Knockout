@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dgfvc4e55urjl"]
+[gd_scene load_steps=38 format=3 uid="uid://dgfvc4e55urjl"]
 
 [ext_resource type="Script" uid="uid://cwrmwsjrblocb" path="res://scripts/level_1.gd" id="1_1s4pk"]
 [ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_2aecg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ssriawo0w0n8" path="res://assets/sprites/New Piskel (1).png" id="7_2cbcq"]
 [ext_resource type="PackedScene" uid="uid://28htanwxrsma" path="res://scenes/Pause.tscn" id="7_x2xxo"]
 [ext_resource type="Texture2D" uid="uid://se8yvvr27o5h" path="res://assets/sprites/New Piskel.png" id="8_isj1j"]
+[ext_resource type="AudioStream" uid="uid://b5fq4glnyfb06" path="res://assets/sounds/jump.wav" id="8_x2xxo"]
 [ext_resource type="PackedScene" uid="uid://do6jwqcif7y5w" path="res://scenes/killzone.tscn" id="9_so66j"]
 [ext_resource type="PackedScene" uid="uid://b6vg1ortgm4h5" path="res://scenes/platform.tscn" id="10_7gny6"]
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="11_d5akn"]
@@ -20,6 +21,7 @@
 
 [sub_resource type="GDScript" id="GDScript_s7g0b"]
 script/source = "extends CharacterBody2D
+@onready var jump_2: AudioStreamPlayer2D = $Jump2
 
 
 const SPEED = 150.0
@@ -37,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+		jump_2.play()
 	#Gets the Input Direction: -1, 0, 1
 	var direction := Input.get_axis(\"move_left\", \"move_right\")
 	
@@ -448,6 +450,9 @@ offset_bottom = 94.0
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(5, 5)
 limit_bottom = 80
+
+[node name="Jump2" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("8_x2xxo")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_iw4em")

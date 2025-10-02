@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var jump_2: AudioStreamPlayer2D = $Player/Jump2
+@onready var running: AudioStreamPlayer2D = $Running
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -19,7 +21,9 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		running.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		running.stop()
 
 	move_and_slide()
