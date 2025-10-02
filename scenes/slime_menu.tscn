@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp7r3u07w0mm1"]
+
+[ext_resource type="Script" uid="uid://6uq8vq1anbt1" path="res://scenes/slime_menu.gd" id="1_82hwr"]
+
+[node name="SlimeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = -855.0
+offset_bottom = -482.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.96, 3.96)
+script = ExtResource("1_82hwr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 287.0
+offset_bottom = 161.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Dye" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Die"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Dye" to="." method="_on_dye_pressed"]
