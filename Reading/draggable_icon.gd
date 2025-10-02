@@ -9,6 +9,7 @@ var initialPos : Vector2
 
 #when mouse enters icon
 func _on_icon_area_mouse_entered() -> void:
+	print("enter")
 	#if player is not dragging anything else
 	if not Global.is_dragging:
 		draggable = true
@@ -25,6 +26,7 @@ func _on_icon_area_mouse_exited() -> void:
 		
 #runs when a body enters the icon area
 func _on_icon_area_body_entered(body: Node2D) -> void:
+	print("enter")
 	#confirms the area is a droppable area
 	if body.is_in_group('droppable'):
 		is_inside_dropable = true
@@ -35,6 +37,7 @@ func _on_icon_area_body_entered(body: Node2D) -> void:
 
 #runs when a body exits the icon area
 func _on_icon_area_body_exited(body: Node2D) -> void:
+	print("exit")
 	#confirms the area is a droppable area
 	if body.is_in_group('droppable'):
 		is_inside_dropable = false
