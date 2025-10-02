@@ -24,6 +24,8 @@ var sentance_list = []
 
 #create varible for question type
 var is_math_question = true
+
+var enemy_encounter = false
 	
 func populate() -> void:
 	#populates the array with words from the file

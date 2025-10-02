@@ -37,3 +37,6 @@ func _on_lned_answer_text_submitted(new_text: String) -> void:
 	else:
 		get_tree().paused = false
 		self.visible = false
+		if Global.enemy_encounter:
+			Engine.time_scale = 1
+			Global.enemy_encounter = false

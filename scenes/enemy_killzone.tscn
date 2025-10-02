@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cr5ke6vb18fax"]
 
 [ext_resource type="Script" uid="uid://da80u0kslpn58" path="res://scripts/enemy_killzone.gd" id="1_m4uh7"]
-[ext_resource type="PackedScene" uid="uid://dp7r3u07w0mm1" path="res://scenes/slime_menu.tscn" id="2_8ei62"]
+[ext_resource type="PackedScene" uid="uid://baa6ckddn8c2f" path="res://math_question.tscn" id="2_rjxbi"]
 
 [node name="EnemyKillzone" type="Area2D"]
 collision_layer = 3
@@ -11,14 +11,7 @@ script = ExtResource("1_m4uh7")
 wait_time = 0.4
 one_shot = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="SlimeMenu" parent="CanvasLayer" instance=ExtResource("2_8ei62")]
-visible = false
-offset_left = 389.5
-offset_top = 165.5
-offset_right = 389.5
-offset_bottom = 165.5
+[node name="math_question" parent="." instance=ExtResource("2_rjxbi")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

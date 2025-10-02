@@ -5,7 +5,7 @@ var checkpoint_manager
 var player
 var pullQ = false
 
-@onready var slime_menu: Control = $CanvasLayer/SlimeMenu
+#@onready var slime_menu: Control = $CanvasLayer/SlimeMenu
 
 
 #@onready var questions: Control = $"."
@@ -29,7 +29,8 @@ func _on_body_entered(body: Node2D) -> void:
 	#get_tree().change_scene_to_file("res://death_screen.tscn")
 	if slime.visible:
 		if body.is_in_group("Player"):
-			slime_menu.visible = true
+			Global.enemy_encounter = true
+			$math_question.new_math_question()
 			Engine.time_scale = 0
 	
 #func get_q():
