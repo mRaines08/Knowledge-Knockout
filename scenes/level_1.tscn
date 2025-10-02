@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dgfvc4e55urjl"]
+[gd_scene load_steps=41 format=3 uid="uid://dgfvc4e55urjl"]
 
 [ext_resource type="Script" uid="uid://cwrmwsjrblocb" path="res://scripts/level_1.gd" id="1_1s4pk"]
 [ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_2aecg"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://ssriawo0w0n8" path="res://assets/sprites/New Piskel (1).png" id="7_2cbcq"]
 [ext_resource type="PackedScene" uid="uid://28htanwxrsma" path="res://scenes/Pause.tscn" id="7_x2xxo"]
 [ext_resource type="Texture2D" uid="uid://se8yvvr27o5h" path="res://assets/sprites/New Piskel.png" id="8_isj1j"]
+[ext_resource type="PackedScene" uid="uid://baa6ckddn8c2f" path="res://math_question.tscn" id="8_so66j"]
+[ext_resource type="PackedScene" uid="uid://bl426hbw8an58" path="res://reading_question.tscn" id="8_tr1x6"]
 [ext_resource type="PackedScene" uid="uid://do6jwqcif7y5w" path="res://scenes/killzone.tscn" id="9_so66j"]
 [ext_resource type="PackedScene" uid="uid://b6vg1ortgm4h5" path="res://scenes/platform.tscn" id="10_7gny6"]
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="11_d5akn"]
@@ -448,6 +450,10 @@ offset_top = 94.0
 offset_right = 298.0
 offset_bottom = 94.0
 
+[node name="reading_question" parent="Player" instance=ExtResource("8_tr1x6")]
+
+[node name="math_question" parent="Player" instance=ExtResource("8_so66j")]
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(5, 5)
 limit_bottom = 80
@@ -466,6 +472,8 @@ layer_3/tile_data = PackedInt32Array(131049, 262145, 9, 196585, 262145, 10, 2621
 
 [node name="Killzone" parent="." instance=ExtResource("9_so66j")]
 position = Vector2(-2, 94)
+math_question_node = NodePath("../Player/math_question")
+reading_question_node = NodePath("../Player/reading_question")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, -7)

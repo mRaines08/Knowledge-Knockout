@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://brl02aujou67k"]
+[gd_scene load_steps=37 format=3 uid="uid://brl02aujou67k"]
 
 [ext_resource type="Script" uid="uid://c8k2hcr2f3flp" path="res://scripts/level_2.gd" id="1_wvb8j"]
 [ext_resource type="Script" uid="uid://chdwa2sfubuks" path="res://scripts/score_manager.gd" id="2_56gwk"]
@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cec60o7y4mw8i" path="res://scenes/player.tscn" id="5_wvb8j"]
 [ext_resource type="PackedScene" uid="uid://28htanwxrsma" path="res://scenes/Pause.tscn" id="6_cqal4"]
 [ext_resource type="Texture2D" uid="uid://dfua2jgxg7qhw" path="res://assets/sprites/world_tileset.png" id="6_g8vcy"]
+[ext_resource type="PackedScene" uid="uid://baa6ckddn8c2f" path="res://math_question.tscn" id="7_24ks5"]
 [ext_resource type="Texture2D" uid="uid://ssriawo0w0n8" path="res://assets/sprites/New Piskel (1).png" id="7_cqal4"]
 [ext_resource type="Texture2D" uid="uid://se8yvvr27o5h" path="res://assets/sprites/New Piskel.png" id="8_o3sye"]
+[ext_resource type="PackedScene" uid="uid://bl426hbw8an58" path="res://reading_question.tscn" id="8_s4es8"]
 [ext_resource type="PackedScene" uid="uid://do6jwqcif7y5w" path="res://scenes/killzone.tscn" id="9_24ks5"]
 [ext_resource type="PackedScene" uid="uid://ece6lpdy8ywg" path="res://scenes/wooden_platform.tscn" id="9_56gwk"]
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="10_s4es8"]
@@ -400,6 +402,10 @@ offset_top = 94.0
 offset_right = 276.0
 offset_bottom = 94.0
 
+[node name="math_question" parent="Player" instance=ExtResource("7_24ks5")]
+
+[node name="reading_question" parent="Player" instance=ExtResource("8_s4es8")]
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
 zoom = Vector2(5, 5)
@@ -415,6 +421,8 @@ layer_1/tile_data = PackedInt32Array(-5046121, 458753, 1, 11, 1, 1, 12, 1, 1, 65
 
 [node name="Killzone" parent="." instance=ExtResource("9_24ks5")]
 position = Vector2(-2, 94)
+math_question_node = NodePath("../Player/math_question")
+reading_question_node = NodePath("../Player/reading_question")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, -7)
