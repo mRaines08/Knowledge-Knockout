@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cec60o7y4mw8i" path="res://scenes/player.tscn" id="5_wvb8j"]
 [ext_resource type="PackedScene" uid="uid://28htanwxrsma" path="res://scenes/Pause.tscn" id="6_cqal4"]
 [ext_resource type="Texture2D" uid="uid://dfua2jgxg7qhw" path="res://assets/sprites/world_tileset.png" id="6_g8vcy"]
-[ext_resource type="PackedScene" path="res://math_question.tscn" id="7_24ks5"]
+[ext_resource type="PackedScene" uid="uid://baa6ckddn8c2f" path="res://math_question.tscn" id="7_24ks5"]
 [ext_resource type="Texture2D" uid="uid://ssriawo0w0n8" path="res://assets/sprites/New Piskel (1).png" id="7_cqal4"]
 [ext_resource type="Texture2D" uid="uid://se8yvvr27o5h" path="res://assets/sprites/New Piskel.png" id="8_o3sye"]
-[ext_resource type="PackedScene" path="res://reading_question.tscn" id="8_s4es8"]
+[ext_resource type="PackedScene" uid="uid://bl426hbw8an58" path="res://reading_question.tscn" id="8_s4es8"]
 [ext_resource type="PackedScene" uid="uid://do6jwqcif7y5w" path="res://scenes/killzone.tscn" id="9_24ks5"]
 [ext_resource type="PackedScene" uid="uid://ece6lpdy8ywg" path="res://scenes/wooden_platform.tscn" id="9_56gwk"]
 [ext_resource type="AudioStream" uid="uid://b5fq4glnyfb06" path="res://assets/sounds/jump.wav" id="9_s4es8"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="11_63e4f"]
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="12_y6lc1"]
 [ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="17_g8vcy"]
-[ext_resource type="PackedScene" path="res://scenes/fast_slime.tscn" id="18_cqal4"]
+[ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="18_cqal4"]
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
 script/source = "extends CharacterBody2D
