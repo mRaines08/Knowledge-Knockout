@@ -417,9 +417,9 @@ and Stay on to Move
 [node name="Label5" type="Label" parent="Labels"]
 z_index = 1
 offset_left = 913.0
-offset_top = -241.0
+offset_top = -266.0
 offset_right = 1613.0
-offset_bottom = -111.0
+offset_bottom = -136.0
 scale = Vector2(0.330932, 0.330932)
 theme_override_fonts/font = ExtResource("1_0tnpc")
 text = "This is a Knowledge Bottle. Collect Them All to Regain your Knowledge!
@@ -445,7 +445,9 @@ offset_right = 302.0
 offset_bottom = 102.0
 scale = Vector2(1.0019, 1.0019)
 
-[node name="math_question" parent="Player" instance=ExtResource("9_ssvqc")]
+[node name="math_question" parent="Player/Pause Canvas" instance=ExtResource("9_ssvqc")]
+offset = Vector2(300, 200)
+transform = Transform2D(3, 0, 0, 3, 300, 200)
 
 [node name="reading_question2" parent="Player" instance=ExtResource("10_264po")]
 visible = false
@@ -464,7 +466,7 @@ layer_1/tile_data = PackedInt32Array(131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 655
 
 [node name="Killzone" parent="." instance=ExtResource("5_vtaks")]
 position = Vector2(-2, 94)
-math_question_node = NodePath("../Player/math_question")
+math_question_node = NodePath("../Player/Pause Canvas/math_question")
 reading_question_node = NodePath("../Player/reading_question2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]

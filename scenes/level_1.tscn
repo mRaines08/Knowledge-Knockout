@@ -445,6 +445,16 @@ offset_top = 94.0
 offset_right = 298.0
 offset_bottom = 94.0
 
+<<<<<<< Updated upstream
+=======
+[node name="reading_question" parent="Player" instance=ExtResource("8_tr1x6")]
+
+[node name="math_question" parent="Player" instance=ExtResource("8_so66j")]
+offset = Vector2(300, 100)
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 300, 100)
+
+>>>>>>> Stashed changes
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(5, 5)
 limit_bottom = 80

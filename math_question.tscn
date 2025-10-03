@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://baa6ckddn8c2f"]
+[gd_scene load_steps=3 format=3 uid="uid://baa6ckddn8c2f"]
 
 [ext_resource type="Script" uid="uid://stk5ocybgqq2" path="res://math_question.gd" id="1_mpqef"]
+[ext_resource type="FontFile" uid="uid://deunyo5tgjgb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_jd00v"]
 
 [node name="math_question" type="CanvasLayer"]
 visible = false
+offset = Vector2(300, 150)
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 300, 150)
 script = ExtResource("1_mpqef")
 
 [node name="lblProblem" type="Label" parent="."]
@@ -11,6 +15,10 @@ offset_left = 108.0
 offset_top = 81.0
 offset_right = 298.0
 offset_bottom = 104.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jd00v")
 
 [node name="lnedAnswer" type="LineEdit" parent="."]
 process_mode = 3
@@ -18,5 +26,6 @@ offset_left = 110.0
 offset_top = 111.0
 offset_right = 299.0
 offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("2_jd00v")
 
 [connection signal="text_submitted" from="lnedAnswer" to="." method="_on_lned_answer_text_submitted"]
