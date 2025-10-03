@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalScript="*res://GlobalScript.gd"
 Global="*res://global.gd"
+GlobalScript="*res://GlobalScript.gd"
 
 [display]
 

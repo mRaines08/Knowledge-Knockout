@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c7a21k02guixw"]
+[gd_scene load_steps=29 format=3 uid="uid://c7a21k02guixw"]
 
 [ext_resource type="FontFile" uid="uid://deunyo5tgjgb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0tnpc"]
 [ext_resource type="Script" uid="uid://cstqyj5e8oanm" path="res://scripts/game.gd" id="1_dinhu"]
@@ -14,9 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://28htanwxrsma" path="res://scenes/Pause.tscn" id="7_ir15t"]
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="8_dinhu"]
-[ext_resource type="PackedScene" uid="uid://baa6ckddn8c2f" path="res://math_question.tscn" id="9_ssvqc"]
-[ext_resource type="PackedScene" uid="uid://bl426hbw8an58" path="res://reading_question.tscn" id="10_264po"]
+[ext_resource type="PackedScene" path="res://math_question.tscn" id="9_ssvqc"]
+[ext_resource type="PackedScene" path="res://reading_question.tscn" id="10_264po"]
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="10_vtaks"]
+[ext_resource type="AudioStream" uid="uid://b5fq4glnyfb06" path="res://assets/sounds/jump.wav" id="11_264po"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="11_trtic"]
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
@@ -38,6 +39,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		$Jump.play()
 
 	#Gets the Input Direction: -1, 0, 1
 	var direction := Input.get_axis(\"move_left\", \"move_right\")
@@ -453,6 +455,9 @@ visible = false
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(5, 5)
 limit_bottom = 80
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("11_264po")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7jktm")
