@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ssriawo0w0n8" path="res://assets/sprites/New Piskel (1).png" id="7_2cbcq"]
 [ext_resource type="PackedScene" uid="uid://28htanwxrsma" path="res://scenes/Pause.tscn" id="7_x2xxo"]
 [ext_resource type="Texture2D" uid="uid://se8yvvr27o5h" path="res://assets/sprites/New Piskel.png" id="8_isj1j"]
-[ext_resource type="PackedScene" path="res://math_question.tscn" id="8_so66j"]
+[ext_resource type="PackedScene" uid="uid://baa6ckddn8c2f" path="res://math_question.tscn" id="8_so66j"]
 [ext_resource type="PackedScene" path="res://reading_question.tscn" id="8_tr1x6"]
 [ext_resource type="PackedScene" uid="uid://do6jwqcif7y5w" path="res://scenes/killzone.tscn" id="9_so66j"]
 [ext_resource type="PackedScene" uid="uid://b6vg1ortgm4h5" path="res://scenes/platform.tscn" id="10_7gny6"]
