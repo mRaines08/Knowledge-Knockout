@@ -30,6 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if slime.visible:
 		if body.is_in_group("Player"):
 			Global.enemy_encounter = true
+			slime.visible = false
 			$math_question.new_math_question()
 			Engine.time_scale = 0
 	
