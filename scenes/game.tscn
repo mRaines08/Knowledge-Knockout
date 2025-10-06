@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c7a21k02guixw"]
+[gd_scene load_steps=31 format=3 uid="uid://c7a21k02guixw"]
 
 [ext_resource type="FontFile" uid="uid://deunyo5tgjgb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0tnpc"]
 [ext_resource type="Script" uid="uid://cstqyj5e8oanm" path="res://scripts/game.gd" id="1_dinhu"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="10_vtaks"]
 [ext_resource type="AudioStream" uid="uid://b5fq4glnyfb06" path="res://assets/sounds/jump.wav" id="11_264po"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="11_trtic"]
+[ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="20_5newe"]
+[ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="21_37s47"]
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
 script/source = "extends CharacterBody2D
@@ -241,7 +243,8 @@ texture = ExtResource("4_0tnpc")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_7jktm"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/1 = SubResource("TileSetAtlasSource_trtic")
 sources/3 = SubResource("TileSetAtlasSource_ir15t")
 sources/4 = SubResource("TileSetAtlasSource_ca42v")
@@ -432,6 +435,15 @@ text = "This is a Knowledge Bottle. Collect Them All to Regain your Knowledge!
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="Label6" type="Label" parent="Labels"]
+offset_left = 417.0
+offset_top = -46.0
+offset_right = 693.0
+offset_bottom = -23.0
+scale = Vector2(0.341463, 0.341463)
+theme_override_fonts/font = ExtResource("1_0tnpc")
+text = "Slimes are Enemies."
+
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_uwrxv")]
 z_index = 3
 position = Vector2(9, 6)
@@ -545,5 +557,11 @@ position = Vector2(856, -382)
 
 [node name="Knowledge Bottle" parent="." instance=ExtResource("10_vtaks")]
 position = Vector2(1025, -189)
+
+[node name="Slime" parent="." instance=ExtResource("21_37s47")]
+position = Vector2(482, -28)
+
+[node name="FastSlime" parent="." instance=ExtResource("20_5newe")]
+position = Vector2(619, -92)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
