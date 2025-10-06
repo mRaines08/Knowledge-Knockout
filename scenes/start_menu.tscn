@@ -187,4 +187,12 @@ text = "Knowledge Knockout"
 position = Vector2(0, -35)
 zoom = Vector2(5, 5)
 
+[node name="Quit" type="Button" parent="."]
+offset_left = -37.0
+offset_right = 29.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("2_fcv5n")
+text = "Quit"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
