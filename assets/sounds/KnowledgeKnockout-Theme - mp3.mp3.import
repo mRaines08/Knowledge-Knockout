@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctnsn244tk3n2"
+path="res://.godot/imported/KnowledgeKnockout-Theme - mp3.mp3-d42c4c12a95da26c0c723048985f5b23.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/KnowledgeKnockout-Theme - mp3.mp3"
+dest_files=["res://.godot/imported/KnowledgeKnockout-Theme - mp3.mp3-d42c4c12a95da26c0c723048985f5b23.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
