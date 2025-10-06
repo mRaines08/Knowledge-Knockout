@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=28 format=3 uid="uid://c7a21k02guixw"]
+=======
+[gd_scene load_steps=31 format=3 uid="uid://c7a21k02guixw"]
+>>>>>>> Stashed changes
 
 [ext_resource type="FontFile" uid="uid://deunyo5tgjgb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0tnpc"]
 [ext_resource type="Script" uid="uid://cstqyj5e8oanm" path="res://scripts/game.gd" id="1_dinhu"]
@@ -14,10 +18,20 @@
 [ext_resource type="PackedScene" uid="uid://28htanwxrsma" path="res://scenes/Pause.tscn" id="7_ir15t"]
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="8_dinhu"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="9_ssvqc"]
+=======
+[ext_resource type="PackedScene" uid="uid://baa6ckddn8c2f" path="res://math_question.tscn" id="9_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://bl426hbw8an58" path="res://reading_question.tscn" id="10_264po"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="11_trtic"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="17_rysoc"]
+=======
+[ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="20_5newe"]
+[ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="21_37s47"]
+>>>>>>> Stashed changes
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
 script/source = "extends CharacterBody2D
@@ -357,6 +371,22 @@ position = Vector2(0, -368)
 
 [node name="Labels" type="Node" parent="."]
 
+[node name="Label6" type="Label" parent="Labels"]
+anchors_preset = -1
+anchor_left = 0.259
+anchor_top = -0.031
+anchor_right = 0.259
+anchor_bottom = -0.031
+offset_left = 96.632
+offset_top = -43.912
+offset_right = 494.632
+offset_bottom = 65.088
+scale = Vector2(0.335716, 0.335716)
+theme_override_fonts/font = ExtResource("1_0tnpc")
+text = "This is a slime, your enemy. if you touch it, you will get a question. Get it wrong and get sent back to the last checkpoint."
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="Label4" type="Label" parent="Labels"]
 z_index = 1
 offset_left = 1163.0
@@ -553,6 +583,7 @@ position = Vector2(856, -382)
 [node name="Knowledge Bottle" parent="." instance=ExtResource("10_vtaks")]
 position = Vector2(1025, -189)
 
+<<<<<<< Updated upstream
 [node name="Slimes" type="Node" parent="."]
 
 [node name="Slime1" parent="Slimes" instance=ExtResource("17_rysoc")]
@@ -560,5 +591,12 @@ position = Vector2(456, -44)
 
 [node name="FastSlime" parent="Slimes" instance=ExtResource("9_ssvqc")]
 position = Vector2(619, -92)
+=======
+[node name="Slime" parent="." instance=ExtResource("20_5newe")]
+position = Vector2(442, -28)
+
+[node name="FastSlime" parent="." instance=ExtResource("21_37s47")]
+position = Vector2(687, -92)
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
