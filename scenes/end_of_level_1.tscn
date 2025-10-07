@@ -204,6 +204,22 @@ theme_override_fonts/font = ExtResource("3_fslll")
 text = "Replay
 "
 
+[node name="Total Answer" type="Label" parent="."]
+offset_left = -104.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_st7qg")
+text = "Questions"
+
+[node name="Accuracy" type="Label" parent="."]
+offset_left = -104.0
+offset_top = -16.0
+offset_right = 8.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("2_st7qg")
+text = "Accuracy"
+
 [connection signal="pressed" from="Back to Menu" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="Next Level" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]

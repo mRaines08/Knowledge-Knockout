@@ -44,6 +44,3 @@ func _on_lned_answer_text_submitted(new_text: String) -> void:
 			Engine.time_scale = 1
 			Global.enemy_encounter = false
 			
-	print("total" + str(Global.total_questions))
-	print("right" + str(Global.questions_correct))
-	print("wrong" + str(Global.questions_wrong))

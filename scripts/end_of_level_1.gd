@@ -5,10 +5,12 @@ func _ready() -> void:
 	var formatted_time = GlobalScript.get_formatted_time()
 	$Time.text = "Time: " + formatted_time
 	
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Test.text = "Knowledge Bottles: " + str(GlobalScript.count) + "/2"
+	$Accuracy.text = "Accuracy: " + str(round(Global.questions_correct / Global.total_questions)) + "%"
+	$"Total Answer".text = "Questions Answered: " + str(Global.total_questions)
 
 
 func _on_back_to_menu_pressed() -> void:
