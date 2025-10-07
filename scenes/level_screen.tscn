@@ -143,10 +143,10 @@ sources/0 = SubResource("TileSetAtlasSource_g5mqe")
 [node name="Level Screen" type="Node2D"]
 
 [node name="Level 3" type="Button" parent="."]
-offset_left = -53.0
+offset_left = -51.0
 offset_top = -45.0
-offset_right = -20.0
-offset_bottom = -14.0
+offset_right = -18.0
+offset_bottom = -13.0
 scale = Vector2(0.527634, 0.527634)
 theme_override_fonts/font = ExtResource("1_mqw8u")
 text = "3
@@ -167,7 +167,7 @@ script = ExtResource("1_4uhdm")
 offset_left = -79.0
 offset_top = -45.0
 offset_right = -46.0
-offset_bottom = -14.0
+offset_bottom = -13.0
 scale = Vector2(0.527634, 0.527634)
 theme_override_fonts/font = ExtResource("1_mqw8u")
 text = "2
