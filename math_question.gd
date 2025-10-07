@@ -32,11 +32,18 @@ func new_math_question():
 
 
 func _on_lned_answer_text_submitted(new_text: String) -> void:
+	Global.total_questions += 1
 	if $lnedAnswer.text != str(sum):
+		Global.questions_wrong += 1
 		new_math_question()
 	else:
+		Global.questions_correct += 1
 		get_tree().paused = false
 		self.visible = false
 		if Global.enemy_encounter:
 			Engine.time_scale = 1
 			Global.enemy_encounter = false
+			
+	print("total" + str(Global.total_questions))
+	print("right" + str(Global.questions_correct))
+	print("wrong" + str(Global.questions_wrong))

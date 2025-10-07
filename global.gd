@@ -26,6 +26,11 @@ var sentance_list = []
 var is_math_question = true
 
 var enemy_encounter = false
+
+#create varible to check accuracy
+var total_questions = 0
+var questions_correct = 0
+var questions_wrong = 0
 	
 func populate() -> void:
 	#populates the array with words from the file
