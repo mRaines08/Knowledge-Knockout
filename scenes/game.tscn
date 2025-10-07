@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="10_vtaks"]
 [ext_resource type="AudioStream" uid="uid://b5fq4glnyfb06" path="res://assets/sounds/jump.wav" id="11_264po"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="11_trtic"]
-[ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="20_5newe"]
+[ext_resource type="PackedScene" path="res://scenes/fast_slime.tscn" id="20_5newe"]
 [ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="21_37s47"]
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
@@ -409,9 +409,9 @@ text = "Press <- and -> or A and D to Move"
 
 [node name="Label3" type="Label" parent="Labels"]
 z_index = 1
-offset_left = 142.0
+offset_left = 159.0
 offset_top = -40.0
-offset_right = 464.0
+offset_right = 481.0
 offset_bottom = 35.0
 scale = Vector2(0.327177, 0.327177)
 theme_override_fonts/font = ExtResource("1_0tnpc")
