@@ -4,12 +4,13 @@ extends Node2D
 func _ready() -> void:
 	var formatted_time = GlobalScript.get_formatted_time()
 	$Time.text = "Time: " + formatted_time
+	print(Global.questions_correct)
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Test.text = "Knowledge Bottles: " + str(GlobalScript.count) + "/2"
-	$Accuracy.text = "Accuracy: " + str(round(Global.questions_correct / Global.total_questions)) + "%"
+	$Accuracy.text = "Accuracy: " + str(round((float(Global.questions_correct) / float(Global.total_questions)) * 100)) + "%"
 	$"Total Answer".text = "Questions Answered: " + str(Global.total_questions)
 
 

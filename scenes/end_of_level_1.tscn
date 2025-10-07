@@ -205,9 +205,9 @@ text = "Replay
 "
 
 [node name="Total Answer" type="Label" parent="."]
-offset_left = -104.0
+offset_left = -113.0
 offset_top = 8.0
-offset_right = 16.0
+offset_right = 7.0
 offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("2_st7qg")
 text = "Questions"
