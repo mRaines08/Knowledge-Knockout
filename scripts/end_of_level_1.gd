@@ -7,6 +7,7 @@ func _ready() -> void:
 	print(Global.questions_correct)
 	
 	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Test.text = "Knowledge Bottles: " + str(GlobalScript.count) + "/2"
@@ -17,12 +18,13 @@ func _process(delta: float) -> void:
 func _on_back_to_menu_pressed() -> void:
 	GlobalScript.count = 0
 	get_tree().change_scene_to_file("res://scenes/level_screen.tscn")
-
+	Global.reset()
 
 func _on_next_level_pressed() -> void:
 	GlobalScript.count = 0
 	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
-
+	Global.reset()
 
 func _on_replay_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	Global.reset()

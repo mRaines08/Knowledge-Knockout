@@ -436,10 +436,10 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label6" type="Label" parent="Labels"]
-offset_left = 417.0
-offset_top = -46.0
-offset_right = 693.0
-offset_bottom = -23.0
+offset_left = 418.0
+offset_top = -76.0
+offset_right = 694.0
+offset_bottom = -53.0
 scale = Vector2(0.341463, 0.341463)
 theme_override_fonts/font = ExtResource("1_0tnpc")
 text = "Slimes are Enemies."

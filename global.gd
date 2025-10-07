@@ -31,6 +31,12 @@ var enemy_encounter = false
 var total_questions = 0
 var questions_correct = 0
 var questions_wrong = 0
+
+#resets questions varibles
+func reset():
+	total_questions = 0
+	questions_correct = 0
+	questions_wrong = 0
 	
 func populate() -> void:
 	#populates the array with words from the file

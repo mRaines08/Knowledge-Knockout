@@ -21,6 +21,8 @@ func testEsc():
 		pause_canvas.visible = false
 		pause_canvas2.visible = false
 		pause_canvas3.visible = false
+		
+		
 func _on_resume_pressed() -> void:
 	resume()
 	pause_canvas.visible = false
@@ -30,6 +32,7 @@ func _on_quit_pressed() -> void:
 	resume()
 	GlobalScript.count = 0
 	get_tree().change_scene_to_file("res://scenes/level_screen.tscn")
+	Global.reset()
 	
 
 
@@ -37,6 +40,7 @@ func _on_restart_pressed() -> void:
 	resume()
 	GlobalScript.count = 0
 	get_tree().reload_current_scene()
+	Global.reset()
 
 	
 func _process(Delta):
