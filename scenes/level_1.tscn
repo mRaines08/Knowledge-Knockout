@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="13_x2fux"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="15_6dial"]
 [ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="18_x2xxo"]
-[ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="19_2cbcq"]
+[ext_resource type="PackedScene" path="res://scenes/fast_slime.tscn" id="19_2cbcq"]
 
 [sub_resource type="GDScript" id="GDScript_s7g0b"]
 script/source = "extends CharacterBody2D
