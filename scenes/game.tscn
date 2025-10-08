@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="8_dinhu"]
 [ext_resource type="PackedScene" uid="uid://baa6ckddn8c2f" path="res://math_question.tscn" id="9_ssvqc"]
-[ext_resource type="PackedScene" uid="uid://bl426hbw8an58" path="res://reading_question.tscn" id="10_264po"]
+[ext_resource type="PackedScene" path="res://reading_question.tscn" id="10_264po"]
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="10_vtaks"]
 [ext_resource type="AudioStream" uid="uid://b5fq4glnyfb06" path="res://assets/sounds/jump.wav" id="11_264po"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="11_trtic"]
