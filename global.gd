@@ -38,6 +38,12 @@ func reset():
 	questions_correct = 0
 	questions_wrong = 0
 	
+var math_type = 0
+#1 = addition
+#2 = subtraction
+#3 = multiplication
+#4 = division
+	
 func populate() -> void:
 	#populates the array with words from the file
 	#while the cursor is with in the text keep looping
