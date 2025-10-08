@@ -161,32 +161,20 @@ text = "Test"
 horizontal_alignment = 1
 
 [node name="Back to Menu" type="Button" parent="."]
-offset_left = -185.0
-offset_top = 79.0
-offset_right = -1.0
-offset_bottom = 110.0
-scale = Vector2(0.549044, 0.549044)
+offset_left = -186.0
+offset_top = 66.0
+offset_right = -2.0
+offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("3_fslll")
 text = "Back to Menu"
 
 [node name="Next Level" type="Button" parent="."]
-offset_left = 97.0
-offset_top = 79.0
-offset_right = 251.0
-offset_bottom = 110.0
-scale = Vector2(0.570138, 0.570138)
+offset_left = 33.0
+offset_top = 66.0
+offset_right = 187.0
+offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("3_fslll")
 text = "Next Level"
-
-[node name="Replay" type="Button" parent="."]
-offset_left = -19.0
-offset_top = 79.0
-offset_right = 81.0
-offset_bottom = 110.0
-scale = Vector2(0.520802, 0.520802)
-theme_override_fonts/font = ExtResource("3_fslll")
-text = "Replay
-"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
@@ -206,6 +194,31 @@ offset_right = 60.0
 offset_bottom = -51.0
 theme_override_fonts/font = ExtResource("3_fslll")
 text = "Good Job!"
+
+[node name="Replay" type="Button" parent="."]
+offset_left = -37.0
+offset_top = 28.0
+offset_right = 63.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("3_fslll")
+text = "Replay
+"
+
+[node name="Total Answer" type="Label" parent="."]
+offset_left = -132.0
+offset_top = 8.0
+offset_right = 158.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_st7qg")
+text = "Questions Answered: 00"
+
+[node name="Accuracy" type="Label" parent="."]
+offset_left = -86.0
+offset_top = -16.0
+offset_right = 114.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("2_st7qg")
+text = "Accuracy: 99.9%"
 
 [connection signal="pressed" from="Back to Menu" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="Next Level" to="." method="_on_next_level_pressed"]
