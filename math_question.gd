@@ -14,8 +14,7 @@ func new_math_question():
 	$lnedAnswer.text = ""
 	
 	#places cursor in lneAnswer
-	if !$lnedAnswer.has_focus():
-		$lnedAnswer.grab_focus()
+	$lnedAnswer.grab_focus()
 	
 	#instantiates random number genorator
 	rng.randomize()

@@ -2,7 +2,7 @@ extends Window
 
 
 func _ready():
-	self.visible = false
+	#self.visible = false
 	
 	#populates lists for the word bank of the madlib
 	Global.populate()
