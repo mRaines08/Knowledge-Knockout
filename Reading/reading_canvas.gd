@@ -1,9 +1,24 @@
 extends CanvasLayer
 
+var icon0_pos
+var icon1_pos
+var icon2_pos
+
 func _ready():
+	icon0_pos = $draggable_icon0.position
+	icon1_pos = $draggable_icon1.position
+	icon2_pos = $draggable_icon2.position
 	new_reading_question()
+	
 
 func new_reading_question():
+	#resets for new reading question
+	self.visible = true
+	$score.text = ""
+	$draggable_icon0.position = icon0_pos
+	$draggable_icon1.position = icon1_pos
+	$draggable_icon2.position = icon2_pos
+	
 	#populates lists for the word bank of the madlib
 	Global.populate()
 	
