@@ -2,8 +2,8 @@ extends Area2D
 
 @export var math_question_node: NodePath
 @onready var math_question = get_node(math_question_node)
-@export var reading_question_node: NodePath
-@onready var reading_question = get_node(reading_question_node)
+@export var reading_canvas_node: NodePath
+@onready var reading_canvas = get_node(reading_canvas_node)
 #@onready var timer: Timer = $Timer
 var checkpoint_manager
 var player
@@ -25,7 +25,7 @@ func killPlayer():
 	if Global.is_math_question:
 		math_question.new_math_question()
 	else:
-		reading_question.visible = true
+		reading_canvas.visible = true
 	
 func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()

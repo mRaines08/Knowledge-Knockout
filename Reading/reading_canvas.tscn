@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://bip3ok8rktjx3"]
+
+[ext_resource type="Script" uid="uid://pusaydxtk7fs" path="res://Reading/reading_canvas.gd" id="1_t7ytr"]
+[ext_resource type="PackedScene" uid="uid://oigcrjmioer" path="res://Reading/drop_zone.tscn" id="2_2mxyn"]
+[ext_resource type="FontFile" uid="uid://cvdcagqd6ge2r" path="res://assets/fonts/PixelOperator8.ttf" id="2_nl50d"]
+[ext_resource type="PackedScene" uid="uid://d0vx2ea5gtpv3" path="res://Reading/draggable_icon.tscn" id="3_nl50d"]
+
+[node name="reading_canvas" type="CanvasLayer"]
+offset = Vector2(350, 200)
+transform = Transform2D(1, 0, 0, 1, 350, 200)
+script = ExtResource("1_t7ytr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 834.0
+offset_bottom = 128.0
+mouse_filter = 2
+color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="btn_check" type="Button" parent="."]
+offset_left = 714.0
+offset_top = 56.0
+offset_right = 814.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("2_nl50d")
+text = "Check"
+metadata/_edit_use_anchors_ = true
+
+[node name="lbl_word1" type="Label" parent="."]
+offset_left = 26.0
+offset_top = 16.0
+offset_right = 148.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_nl50d")
+text = "word1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_word2" type="Label" parent="."]
+offset_left = 162.0
+offset_top = 16.0
+offset_right = 282.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_nl50d")
+text = "word2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_word3" type="Label" parent="."]
+offset_left = 298.0
+offset_top = 16.0
+offset_right = 418.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_nl50d")
+text = "word3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_word4" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.0347222
+offset_left = 434.0
+offset_top = 16.0
+offset_right = 514.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_nl50d")
+text = "word4"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="lbl_word5" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.0347222
+offset_left = 570.0
+offset_top = 16.0
+offset_right = 650.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_nl50d")
+text = "word5"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="lbl_word6" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.0373264
+offset_left = 706.0
+offset_top = 16.0
+offset_right = 783.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_nl50d")
+text = "word6"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="drop_zone_adjective" parent="." instance=ExtResource("2_2mxyn")]
+position = Vector2(120, -32)
+
+[node name="drop_zone_noun" parent="." instance=ExtResource("2_2mxyn")]
+position = Vector2(312, -24)
+
+[node name="drop_zone_verb" parent="." instance=ExtResource("2_2mxyn")]
+position = Vector2(496, -24)
+
+[node name="draggable_icon0" parent="." instance=ExtResource("3_nl50d")]
+position = Vector2(88, 82)
+
+[node name="draggable_icon1" parent="." instance=ExtResource("3_nl50d")]
+position = Vector2(235, 83)
+
+[node name="draggable_icon2" parent="." instance=ExtResource("3_nl50d")]
+position = Vector2(373, 80)
+
+[connection signal="pressed" from="btn_check" to="." method="_on_btn_check_pressed"]

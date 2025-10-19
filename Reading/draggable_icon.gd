@@ -31,7 +31,7 @@ func _on_icon_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group('droppable'):
 		is_inside_dropable = true
 		#change drop zone color for user feedback
-		body.modulate = Color(Color.REBECCA_PURPLE, 1)
+		body.modulate = Color(Color.LIGHT_GRAY, 1)
 		body_ref = body
 		print(body_ref)
 
@@ -42,7 +42,7 @@ func _on_icon_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group('droppable'):
 		is_inside_dropable = false
 		#reset sprite
-		body.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+		body.modulate = Color(Color.WEB_GRAY, 0.7)
 
 #assigns meta data to draggable icons
 func assign_meta():

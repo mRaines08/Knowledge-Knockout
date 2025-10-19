@@ -1,27 +1,25 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0vx2ea5gtpv3"]
 
 [ext_resource type="Script" uid="uid://c7gxg4eh3papo" path="res://Reading/draggable_icon.gd" id="1_wdkek"]
-[ext_resource type="Texture2D" uid="uid://24mphxt0fu2h" path="res://black.jpg" id="2_wdkek"]
+[ext_resource type="FontFile" uid="uid://cvdcagqd6ge2r" path="res://assets/fonts/PixelOperator8.ttf" id="2_623hh"]
 [ext_resource type="Script" uid="uid://c3ssgbx6k0hx5" path="res://Reading/word.gd" id="3_623hh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdkek"]
-size = Vector2(73.5, 64.5)
+size = Vector2(112, 32)
 
 [node name="draggable_icon" type="Node2D"]
 script = ExtResource("1_wdkek")
 metadata/type = ""
 
-[node name="icon" type="Sprite2D" parent="."]
-position = Vector2(0, -2.27374e-13)
-scale = Vector2(0.0571208, 0.0646465)
-texture = ExtResource("2_wdkek")
-
 [node name="word" type="Label" parent="."]
-offset_left = -37.0
-offset_top = -32.0
-offset_right = 36.0
-offset_bottom = 31.0
-text = "text"
+offset_left = -56.0
+offset_top = -16.0
+offset_right = 56.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("2_623hh")
+text = "word"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("3_623hh")
 
 [node name="icon_area" type="Area2D" parent="."]

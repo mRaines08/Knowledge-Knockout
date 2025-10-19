@@ -2,7 +2,7 @@ extends StaticBody2D
 
 func _ready():
 	#color the drop area
-	modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+	modulate = Color(Color.WEB_GRAY, 0.7)
 	
 #make the drop zone only visible when dragging
 func _process(delta):

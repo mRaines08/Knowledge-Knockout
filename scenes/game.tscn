@@ -10,16 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://se8yvvr27o5h" path="res://assets/sprites/New Piskel.png" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://b6vg1ortgm4h5" path="res://scenes/platform.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://do6jwqcif7y5w" path="res://scenes/killzone.tscn" id="5_vtaks"]
+[ext_resource type="PackedScene" uid="uid://bip3ok8rktjx3" path="res://Reading/reading_canvas.tscn" id="7_5newe"]
 [ext_resource type="PackedScene" uid="uid://2hd4krrsu1o5" path="res://scenes/pause_canvas.tscn" id="7_ca42v"]
 [ext_resource type="PackedScene" uid="uid://28htanwxrsma" path="res://scenes/Pause.tscn" id="7_ir15t"]
 [ext_resource type="Script" uid="uid://bk3a8jsi6v6nv" path="res://scripts/checkpoint_manager.gd" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://b8lexa7om3fur" path="res://scenes/checkpoint.tscn" id="8_dinhu"]
 [ext_resource type="PackedScene" uid="uid://baa6ckddn8c2f" path="res://math_question.tscn" id="9_ssvqc"]
-[ext_resource type="PackedScene" uid="uid://bl426hbw8an58" path="res://reading_question.tscn" id="10_264po"]
 [ext_resource type="PackedScene" uid="uid://cynl22h7a7kgc" path="res://scenes/knowledge_bottle.tscn" id="10_vtaks"]
 [ext_resource type="AudioStream" uid="uid://b5fq4glnyfb06" path="res://assets/sounds/jump.wav" id="11_264po"]
 [ext_resource type="PackedScene" uid="uid://buldooh7egiba" path="res://scenes/End.tscn" id="11_trtic"]
-[ext_resource type="PackedScene" path="res://scenes/fast_slime.tscn" id="20_5newe"]
+[ext_resource type="PackedScene" uid="uid://kng2l7jukgh0" path="res://scenes/fast_slime.tscn" id="20_5newe"]
 [ext_resource type="PackedScene" uid="uid://bpyydrg5sossw" path="res://scenes/slime.tscn" id="21_37s47"]
 
 [sub_resource type="GDScript" id="GDScript_e2o6t"]
@@ -444,6 +444,11 @@ scale = Vector2(0.341463, 0.341463)
 theme_override_fonts/font = ExtResource("1_0tnpc")
 text = "Slimes are Enemies."
 
+[node name="math_question" parent="." instance=ExtResource("9_ssvqc")]
+
+[node name="reading_canvas" parent="." instance=ExtResource("7_5newe")]
+visible = false
+
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_uwrxv")]
 z_index = 3
 position = Vector2(9, 6)
@@ -458,11 +463,6 @@ offset_top = 102.0
 offset_right = 302.0
 offset_bottom = 102.0
 scale = Vector2(1.0019, 1.0019)
-
-[node name="math_question" parent="Player" instance=ExtResource("9_ssvqc")]
-
-[node name="reading_question2" parent="Player" instance=ExtResource("10_264po")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(5, 5)
@@ -481,8 +481,7 @@ layer_1/tile_data = PackedInt32Array(131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 655
 
 [node name="Killzone" parent="." instance=ExtResource("5_vtaks")]
 position = Vector2(-2, 94)
-math_question_node = NodePath("../Player/math_question")
-reading_question_node = NodePath("../Player/reading_question2")
+math_question_node = NodePath("../math_question")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, -7)
